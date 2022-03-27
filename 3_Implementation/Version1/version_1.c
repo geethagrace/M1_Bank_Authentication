@@ -72,7 +72,7 @@ void login()
        e=split(z);
        if(e==1)
        {
-	        printf("\n\Illegal entry....Login Failed");
+	        printf("\n\n Illegal entry....Login Failed");
        }
 }
 
