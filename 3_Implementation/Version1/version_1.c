@@ -6,7 +6,7 @@ int split(char *a)
 	char all_user[10][100];
 	char da[100];
 	int y,e=0,n=0,r,d=1,dr=0;
-    printf("\n welcome to login section....\n ");
+        printf("\n welcome to login section....\n ");
 	printf("Enter the username :");
 	scanf("%s",user);
 	printf("Enter the password :");
@@ -26,7 +26,7 @@ int split(char *a)
 		}
 	}
 
-    for(y=0;y<e;y++)
+        for(y=0;y<e;y++)
 	{
 	dr=0,r=0;
 		for(n=0;all_user[y][n]!=NULL;n++)
@@ -62,18 +62,18 @@ void login()
 	int e=0;
 	file=fopen("Geetha.txt","r");
 
-    do
+        do
 	{
 		a=fgetc(file);
 		z[e]=a;
 		e++;
 	}while(a!=EOF);
 	z[e]=NULL;
-       e=split(z);
-       if(e==1)
-       {
+        e=split(z);
+        if(e==1)
+        {
 	        printf("\n\n Illegal entry....Login Failed");
-       }
+        }
 }
 
 void create()
@@ -82,7 +82,7 @@ void create()
 	char user[100],pass[100];
 	file=fopen("Geetha.txt","a");
 
-    printf("\n welcome to create an entry......\n");
+        printf("\n welcome to create an entry......\n");
 	printf("Enter the username :");
 	scanf("%s",user);
 	printf("Enter the password :");
@@ -96,7 +96,7 @@ void create()
 	printf("\n ....entry created....\n");
 	fprintf(file,"%s",user);
 
-    fclose(file);
+        fclose(file);
 }
 int main()
 {
@@ -110,11 +110,11 @@ int main()
 	    case 1:
 		   create();
 		   break;
-        case 2:
-            login();
-            break;
-        default:
-            printf("\n wrong entry.......");
+            case 2:
+                   login();
+                   break;
+            default:
+                   printf("\n wrong entry.......");
 	}
 }
 
