@@ -1,11 +1,13 @@
 #include<stdio.h>
 #include<string.h>
+int split(char *a);
 int split(char *a)
 {
 	char user[100],password[100],chkuser[3][100];
 	char all_user[10][100];
 	char da[100];
-	int y,e=0,n=0,r,d=1,dr=0;
+	int y,e=0,n=0,r;
+	int d=1,dr=0;
         printf("\n welcome to login section....\n ");
 	printf("Enter the username :");
 	scanf("%s",user);
