@@ -10,7 +10,7 @@ LDFLAGS =
 # Makefile settings - Can be customized.
 APPNAME = Build
 EXT = .c
-SRCDIR = /mnt/c/Users/Admin
+SRCDIR = /mnt/c/Users/Admin/Desktop/LTTS/M1_project1/3_Implementation/Version1
 OBJDIR = obj
 
 ############## Do not change anything from here downwards! #############
@@ -20,7 +20,6 @@ DEP = $(OBJ:$(OBJDIR)/%.o=%.d)
 # UNIX-based OS variables & settings
 RM = rm
 DELOBJ = $(OBJ)
-# Windows OS variables & settings
 DEL = del
 EXE = .exe
 WDELOBJ = $(SRC:$(SRCDIR)/%$(EXT)=$(OBJDIR)\\%.o)
