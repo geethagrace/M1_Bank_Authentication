@@ -1,20 +1,17 @@
 #include<stdio.h>
 #include<string.h>
-
-int split(char *a);
-
-/* function to convert string to char*/
-int split(char *a)
+#include<stdlib.h>
+int split(char a[1000])
 {
+	FILE *file;
 	char user[100],password[100],chkuser[3][100];
 	char all_user[10][100];
 	char da[100];
-	int y,e=0,n=0,r;
-	int d=1,dr=0;
-        printf("\n welcome to login section....\n ");
-	printf("Enter the username :");
+	int y,e=0,n=0,r,d=1,dr=0,yr,rz;
+
+	printf("Enter the username : ");
 	scanf("%s",user);
-	printf("Enter the password :");
+	printf("Enter the password : ");
 	scanf("%s",password);
 	for(y=0;a[y]!=NULL;y++)
 	{
@@ -31,7 +28,7 @@ int split(char *a)
 		}
 	}
 
-        for(y=0;y<e;y++)
+    for(y=0;y<e;y++)
 	{
 	dr=0,r=0;
 		for(n=0;all_user[y][n]!=NULL;n++)
@@ -51,47 +48,98 @@ int split(char *a)
 
 	if(strcmp(chkuser[0],user)==0 && strcmp(chkuser[1],password)==0)
 	{
-		printf("\n\n%s....Thank you for login",user);
+		rz=y;
+		printf("\n%s Thank you for login",user);
 		d=0;
-		break;
+		for(;;)
+		{
+		    printf("\n Choose the operation to perform : ");
+			printf("\n 1.Balance 2.Deposit 3.Withdraw 4.Logout");
+			printf("\n Enter an option : ");
+			scanf("%d",&y);
+			if(y==1)
+			{
+				printf("%s",chkuser[2]);
+			}
+			else if(y==2)
+			{
+				printf("\n Deposit amount : ");
+				scanf("%d",&yr);
+				yr=yr+atoi(chkuser[2]);
+				strcpy(chkuser[2],itoa(yr, chkuser[2], 10));
+                printf("%s",chkuser[2]);
+
+			}
+			else if(y==3)
+			{
+				printf("\n Withdraw amount : ");
+				scanf("%d",&yr);
+				yr=atoi(chkuser[2])-yr;
+				strcpy(chkuser[2],itoa(yr, chkuser[2], 10));
+				printf("%s",chkuser[2]);
+			}
+			else
+			{
+				strcat(chkuser[0]," ");
+				strcat(chkuser[0],chkuser[1]);
+				strcat(chkuser[0]," ");
+				strcat(chkuser[0],chkuser[2]);
+				strcpy(all_user[rz],chkuser[0]);
+				break;
+			}
+
+		}
+
 	}
 
 	}
+	for(y=0,rz=0;y<e;y++)
+	{
+		for(n=0;all_user[y][n]!=NULL;n++)
+		{
+		   a[rz++]=all_user[y][n];
+		}
+		a[rz++]='\n'																			     ;
+	}
+	a[rz]=NULL;
+	file=fopen("geetha.txt","w");
+	fprintf(file,"%s",a);
+	fclose(file);
 	return d;
+
 }
-/* to check authentication is success or not */
 void login()
 {
 	FILE *file;
 	char a;
 	char z[100];
 	int e=0;
-	file=fopen("Geetha.txt","r");
+	file=fopen("geetha.txt","r");
 
-        do
+
+	do
 	{
 		a=fgetc(file);
 		z[e]=a;
 		e++;
 	}while(a!=EOF);
 	z[e]=NULL;
-        e=split(z);
-        if(e==1)
-        {
-	        printf("\n\n Illegal entry....Login Failed");
-        }
+       e=split(z);
+       if(e==1)
+       {
+	       printf("\n ...login failed");
+       }
 }
-/* to create an entry */
+
 void create()
 {
 	FILE *file;
 	char user[100],pass[100];
-	file=fopen("Geetha.txt","a");
+	file=fopen("geetha.txt","a");
 
-        printf("\n welcome to create an entry......\n");
-	printf("Enter the username :");
+	printf("Enter the username : ");
 	scanf("%s",user);
-	printf("Enter the password :");
+	printf("Enter the password : ");
 	scanf("%s",pass);
 	strcat(user," ");
 	strcat(user,pass);
@@ -99,20 +147,19 @@ void create()
 	strcat(user,"500");
 	strcat(user,"\n");
 	printf("%s",user);
-	printf("\n ....entry created....\n");
 	fprintf(file,"%s",user);
 
-        fclose(file);
-}
 
+	fclose(file);
+}
 int main()
 {
-	int y;
-	printf("AUTHENTICATION SYSTEM\n");
-	printf("1.Create Account\n2.Login account\n");
-	printf("Enter your choice : ");
-	scanf("%d",&y);
-	switch(y)
+	int g;
+	printf("BANKING APPLICATION\n");
+	printf("1.Create Account 2.Login account ");
+	printf("\n Enter your choice : ");
+	scanf("%d",&g);
+	switch(g)
 	{
 	    case 1:
 		   create();
@@ -123,5 +170,7 @@ int main()
             default:
                    printf("\n wrong entry.......");
 	}
+
 }
+
 
