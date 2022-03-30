@@ -10,7 +10,7 @@ In our daily life authentication plays a vital role. Authentication enables orga
 
 # 4W'S and 1H:
 ## What?
-* It is an authentication system using file handling. It can create an entry and used for login. If the login creddentials are correct then authentication will be successful. On the other hand if login fails, it wont't allow to access further.
+* It is an authentication system using file handling. It can create an entry and used for login. If the login creddentials are correct then authentication will be successful and you can futher access by checking balance , withraw or deposit amount . On the other hand if login fails, it wont't allow to access further.
 ## WHY?
 * Its important to keep unauthorized users from accessing sensitive information.Authentication helps ensure only authorized users can gain access to a system by preventing unauthorized users from gaining access and potentially damaging systems, stealing information or causing other problems..
 ## WHERE?
