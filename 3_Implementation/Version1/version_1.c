@@ -1,6 +1,9 @@
 #include<stdio.h>
 #include<string.h>
+
 int split(char *a);
+
+/* function to convert string to char*/
 int split(char *a)
 {
 	char user[100],password[100],chkuser[3][100];
@@ -56,6 +59,7 @@ int split(char *a)
 	}
 	return d;
 }
+/* to check authentication is success or not */
 void login()
 {
 	FILE *file;
@@ -77,7 +81,7 @@ void login()
 	        printf("\n\n Illegal entry....Login Failed");
         }
 }
-
+/* to create an entry */
 void create()
 {
 	FILE *file;
@@ -100,6 +104,7 @@ void create()
 
         fclose(file);
 }
+
 int main()
 {
 	int y;
