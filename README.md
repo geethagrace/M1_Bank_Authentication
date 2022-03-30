@@ -4,4 +4,4 @@
 * Codiga - Static Analysis [![Quality]( https://api.codiga.io/project/32150/status/svg)
 * Build CI - LINUX  [![Build CI- LINUX](https://github.com/geethagrace/M1_project1/actions/workflows/c-cpp.yml/badge.svg)](https://github.com/geethagrace/M1_project1/actions/workflows/c-cpp.yml)
 * Build CI - WINDOWS  [![Build CI - Windows](https://github.com/geethagrace/M1_project1/actions/workflows/windows%20c-cpp.yml/badge.svg)](https://github.com/geethagrace/M1_project1/actions/workflows/windows%20c-cpp.yml)
-* Analysis
+* Analysis [![Analysis](https://github.com/geethagrace/M1_project1/actions/workflows/analysis.yml/badge.svg)](https://github.com/geethagrace/M1_project1/actions/workflows/analysis.yml)
