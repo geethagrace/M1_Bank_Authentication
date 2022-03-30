@@ -155,7 +155,7 @@ void create()
 int main()
 {
 	int g;
-	printf("BANKING APPLICATION\n");
+	printf("AUTHENTICATION SYSTEM FOR BANKING APPLICATION\n");
 	printf("1.Create Account 2.Login account ");
 	printf("\n Enter your choice : ");
 	scanf("%d",&g);
