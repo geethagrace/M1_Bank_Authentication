@@ -1,2 +1,2 @@
-@mainpage Sensors Guide by "Geetha"
-@subpage bank_authentication.h
+	@mainpage Calculator Application by "Geetha"
+	@subpage bank_authentication.h
